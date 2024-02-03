@@ -6,9 +6,6 @@ fsFiles=$(git diff --cached --name-only --diff-filter=ACMR "*.fs" "*.fsx" | sed 
 
 for fsFile in $fsFiles; do
     dotnet fantomas $fsFile
-done
-
-for fsFile in $fsFiles; do
     git add $fsFile
 done
 
