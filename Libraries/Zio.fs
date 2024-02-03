@@ -9,9 +9,15 @@ module Directory =
 
     let exists (path : UPath) (fs : IFileSystem) = fs.DirectoryExists path
 
+    let copy (allowOverwrite : bool) (dest : UPath) (destFs) (src : UPath) (srcFs : IFileSystem) =
+        srcFs.CopyDirectory (src, destFs, dest, allowOverwrite)
+
 module File =
     let create (path : UPath) (fs : IFileSystem) = fs.CreateFile path
 
     let delete (path : UPath) (fs : IFileSystem) = fs.DeleteFile path
 
     let exists (path : UPath) (fs : IFileSystem) = fs.FileExists path
+
+    let copy (allowOverwrite : bool) (dest : UPath) (src : UPath) (srcFs : IFileSystem) =
+        srcFs.CopyFile (src, dest, allowOverwrite)

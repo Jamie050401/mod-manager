@@ -1,0 +1,19 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Formatting solution ..."
+fsFiles=$(git diff --cached --name-only --diff-filter=ACMR "*.fs" "*.fsx" | sed 's| |\\ |g')
+
+for fsFile in $fsFiles; do
+    dotnet fantomas $fsFile
+done
+
+for fsFile in $fsFiles; do
+    git add $fsFile
+done
+
+echo "Building solution ..."
+dotnet build --no-restore
+
+echo "Testing solution ..."
+dotnet test --no-restore

@@ -1,31 +1,4 @@
 {
    "tasks": [
-      {
-         "name": "format",
-         "command": "bash",
-         "args": [ "-c", "dotnet fantomas ../" ],
-         "windows": {
-            "command": "cmd",
-            "args": ["/c", "dotnet fantomas ../" ]
-         }
-      },
-      {
-         "name": "build",
-         "command": "bash",
-         "args": [ "-c", "dotnet build --no-restore" ],
-         "windows": {
-            "command": "cmd",
-            "args": ["/c", "dotnet build --no-restore" ]
-         }
-      },
-      {
-         "name": "test",
-         "command": "bash",
-         "args": [ "-c", "dotnet test --no-restore" ],
-         "windows": {
-            "command": "cmd",
-            "args": ["/c", "dotnet test --no-restore" ]
-         }
-      }
    ]
 }
