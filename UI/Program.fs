@@ -6,8 +6,8 @@ open Avalonia.ReactiveUI
 
 module Program =
 
-    [<CompiledName "BuildAvaloniaApp">] 
-    let buildAvaloniaApp () = 
+    [<CompiledName "BuildAvaloniaApp">]
+    let buildAvaloniaApp () =
         AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
