@@ -13,8 +13,8 @@ module Program =
             .UsePlatformDetect()
             .WithInterFont()
             .LogToTrace(areas = Array.empty)
-            .UseReactiveUI()
+            .UseReactiveUI ()
 
     [<EntryPoint; STAThread>]
     let main argv =
-        buildAvaloniaApp().StartWithClassicDesktopLifetime(argv)
+        buildAvaloniaApp().StartWithClassicDesktopLifetime (argv)

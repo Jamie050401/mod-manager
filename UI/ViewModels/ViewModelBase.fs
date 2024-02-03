@@ -2,5 +2,5 @@
 
 open ReactiveUI
 
-type ViewModelBase() =
-    inherit ReactiveObject()
+type ViewModelBase () =
+    inherit ReactiveObject ()
